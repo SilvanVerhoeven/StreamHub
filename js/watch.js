@@ -16,6 +16,7 @@ function setStreamOnPage(stream) {
         source.type = streamSource.type
         video.appendChild(source)
     })
+    videojs(video)  // Create Video.js player
 }
 
 function createStreamCards(streams) {

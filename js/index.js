@@ -10,7 +10,16 @@ function createStreamCards(streams) {
         streamCard.querySelector(".card-title").innerHTML = stream.name
         streamCard.querySelector(".card-text").innerHTML = stream.description
         streamCard.querySelector(".btn").href = `watch.html?sid=${stream.id}`
+        const video = streamCard.querySelector(".video-js")
+        const sources = stream.sources || []
+        sources.forEach(streamSource => {
+            const source = document.createElement("source")
+            source.src = streamSource.url
+            source.type = streamSource.type
+            video.appendChild(source)
+        })
         streamContainer.appendChild(streamCard)
+        videojs(video)  // Create Video.js player
     })
 
     if (streams.length > 0) {
