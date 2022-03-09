@@ -1,4 +1,7 @@
 {
+    "settings": {
+        "streamHubName": "StreamHub"
+    },
     "streams": [
         {
             "name": "Stream 1",

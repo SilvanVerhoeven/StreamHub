@@ -1,3 +1,7 @@
+function setPage() {
+    document.title = streamHubName
+}
+
 function createStreamCards(streams) {
     /* Create Cards */
     const streamCardTemplate = document.querySelector(".card-stream-template")
@@ -29,7 +33,10 @@ function createStreamCards(streams) {
 
 async function populate() {
     const jsonData = await (await fetch('data/data.json')).json()
+    streamHubName = jsonData.settings.streamHubName
     createStreamCards(jsonData.streams)
 }
+
+let streamHubName = "StreamHub"
 
 populate()
