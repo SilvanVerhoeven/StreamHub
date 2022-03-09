@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/video.js/dist/video-js.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Stream 1</title>
+</head>
+
+<body>
+    <div class="container-lg watch-container">
+        <div class="row">
+            <video
+                id="stream-video"
+                autoplay
+                muted
+                controls
+                class="video-js vjs-live vjs-fluid vjs-16-9"
+                preload='auto'
+                data-setup="{}">
+                <!-- Sources will be added by JS -->
+            </video>
+            <div class="card-body">
+                <h5 id="stream-title" class="card-title">Stream 1</h5>
+                <p id="stream-description" class="card-text">Stream description.</p>
+            </div>
+        </div>
+        <div id="further-streams-section" class="row invisible">
+            <div class="col">
+                <h5>Further Streams</h5>
+                <div id="stream-container" class="row row-cols-2 row-cols-lg-4 g-2">
+                    <div class="col card-stream-template">
+                        <a class="card card-stream text-reset">
+                            <div class="card-body">
+                                <h5 class="card-title">Stream 2</h5>
+                                <p class="card-text">Description of Stream 2.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/watch.js" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/video.js/dist/video.min.js"></script>
+</body>
+
+</html>

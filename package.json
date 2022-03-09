@@ -1,0 +1,14 @@
+{
+  "name": "StreamHub",
+  "version": "1.0.0",
+  "description": "Simple website to give access to multiple live streams.",
+  "main": "index.html",
+  "repository": "git@github.com:SilvanVerhoeven/StreamHub.git",
+  "author": "Silvan Verhoeven <silvan.verhoeven@student.hpi.de>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "video.js": "^7.17.0"
+  }
+}

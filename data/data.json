@@ -1,0 +1,26 @@
+{
+    "streams": [
+        {
+            "name": "Stream 1",
+            "description": "Description of Stream 1",
+            "id": "1",
+            "sources": [
+                {
+                    "url": "https://your-server.com/stream/1.m3u8",
+                    "type": "application/vnd.apple.mpegurl"
+                }
+            ]
+        },
+        {
+            "name": "Stream 2",
+            "description": "Description of Stream 2",
+            "id": "2",
+            "sources": [
+                {
+                    "url": "https://your-other-server.com/live.m3u8",
+                    "type": "application/vnd.apple.mpegurl"
+                }
+            ]
+        }
+    ]
+}

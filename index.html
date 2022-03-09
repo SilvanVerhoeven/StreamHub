@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/video.js/dist/video-js.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>StreamHub</title>
+</head>
+
+<body>
+    <div class="container py-2">
+        <div class="row">
+            <h1>Welcome to StreamHub</h1>
+            <h5>Select a stream of your choice.</h5>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="alert-no-stream" class="alert alert-secondary" role="alert">
+                    No streams available
+                </div>
+                <div id="stream-container" class="row row-cols-2 row-cols-lg-4 g-2">
+                    <div class="col card-stream-template">
+                        <div class="card">
+                            <video
+                                autoplay
+                                muted
+                                class="video-js vjs-live vjs-fluid vjs-16-9"
+                                preload='auto'
+                                data-setup="{}">
+                                <!-- Sources will be added by JS -->
+                            </video>
+                            <div class="card-body">
+                                <h5 class="card-title">Stream 1</h5>
+                                <p class="card-text">Description of Stream 1.</p>
+                                <a class="btn btn-primary">Watch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index.js" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/video.js/dist/video.min.js"></script>
+</body>
+
+</html>

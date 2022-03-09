@@ -1,0 +1,21 @@
+.card-stream {
+    overflow: hidden;
+}
+
+.card-stream-template {
+    display: none !important;
+}
+
+a.card-stream {
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .1s;
+}
+
+.watch-container {
+    max-width: 70rem;
+}
+
+.invisible {
+    display: none;
+}
