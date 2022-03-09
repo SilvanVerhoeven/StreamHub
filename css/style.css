@@ -6,6 +6,11 @@
     display: none !important;
 }
 
+.fadeIn {
+    opacity: 0;
+    transition: all .5s;
+}
+
 a.card-stream {
     cursor: pointer;
     text-decoration: none;
@@ -18,4 +23,22 @@ a.card-stream {
 
 .invisible {
     display: none;
+}
+
+.stream-offline {
+    width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+    background-color: rgb(220, 220, 220);
+}
+
+.stream-offline > div {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    
+    color: rgb(60, 60, 60);
+    font-size: 1.2em;
+    text-align: center;
 }

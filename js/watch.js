@@ -6,18 +6,12 @@ function getRequestedStream(streams) {
 }
 
 function setStreamOnPage(stream) {
-    document.title = `${stream.name} – ${streamHubName}`
+    if (!stream) return
+    document.title = `${stream.name} – ${settings.streamHubName}`
     document.querySelector("#stream-title").textContent = stream.name
     document.querySelector("#stream-description").textContent = stream.description
     const video = document.querySelector("#stream-video")
-    const sources = stream.sources || []
-    sources.forEach(streamSource => {
-        const source = document.createElement("source")
-        source.src = streamSource.url
-        source.type = streamSource.type
-        video.appendChild(source)
-    })
-    videojs(video)  // Create Video.js player
+    populatePlayer(video, stream)
 }
 
 function createStreamCards(streams) {
@@ -35,10 +29,6 @@ function createStreamCards(streams) {
         streamContainer.appendChild(streamCardWrapper)
     })
 
-    if (streams.length > 0) {
-        document.querySelector("#further-streams-section").classList.remove("invisible")
-    }
-
     /* Add mouse events */
     let cards = document.querySelectorAll(".card-stream")
     cards.forEach(card => {
@@ -49,15 +39,13 @@ function createStreamCards(streams) {
     });
 }
 
-async function populate() {
-    const jsonData = await (await fetch('data/data.json')).json()
-    streamHubName = jsonData.settings.streamHubName
-    const streamOnPage = getRequestedStream(jsonData.streams)
-    const furtherStreams = jsonData.streams.filter(stream => stream !== streamOnPage)
+function initPage() {
+    const streamOnPage = getRequestedStream(config.streams)
+    const furtherStreams = config.streams.filter(stream => stream !== streamOnPage)
     setStreamOnPage(streamOnPage)
     createStreamCards(furtherStreams)
+
+    if (config.streams.length > 0) {
+        document.querySelector("#further-streams-section").classList.remove("invisible")
+    }
 }
-
-let streamHubName = "StreamHub"
-
-populate()

@@ -15,16 +15,18 @@
 
 <body>
     <div class="container-lg watch-container">
-        <div class="row">
-            <video-js
-                id="stream-video"
-                autoplay
-                muted
-                controls
-                class="video-js vjs-live vjs-fluid vjs-16-9"
-                preload='auto'>
-                <!-- Sources will be added by JS -->
-            </video-js>
+        <div class="row video-container">
+            <div class="fadeIn">
+                <video-js
+                    id="stream-video"
+                    autoplay
+                    muted
+                    controls
+                    class="video-js vjs-live vjs-fluid vjs-16-9"
+                    preload='auto'>
+                    <!-- Sources will be added by JS -->
+                </video-js>
+            </div>
             <div class="card-body">
                 <h5 id="stream-title" class="card-title placeholder-glow">
                     <span class="placeholder col-6"></span>
@@ -55,9 +57,10 @@
         </div>
     </div>
 
-    <script src="js/watch.js" />
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="node_modules/video.js/dist/video.min.js"></script>
+    <script src="js/watch.js"></script>
+    <script src="js/common.js"></script>
 </body>
 
 </html>

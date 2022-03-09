@@ -21,12 +21,12 @@
         </div>
         <div class="row">
             <div class="col">
-                <div id="alert-no-stream" class="alert alert-secondary" role="alert">
+                <div id="alert-no-stream" class="alert alert-secondary fade" role="alert">
                     No streams available
                 </div>
                 <div id="stream-container" class="row row-cols-2 row-cols-lg-4 g-2">
                     <div class="col card-stream-template">
-                        <div class="card">
+                        <div class="card fadeIn">
                             <video-js
                                 autoplay
                                 muted
@@ -46,9 +46,10 @@
         </div>
     </div>
 
-    <script src="js/index.js" />
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="node_modules/video.js/dist/video.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/common.js"></script>
 </body>
 
 </html>
