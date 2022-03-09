@@ -51,7 +51,7 @@ function createStreamCards(streams) {
 
 async function populate() {
     const jsonData = await (await fetch('data/data.json')).json()
-    streamHubName = jsonData.settings.name
+    streamHubName = jsonData.settings.streamHubName
     const streamOnPage = getRequestedStream(jsonData.streams)
     const furtherStreams = jsonData.streams.filter(stream => stream !== streamOnPage)
     setStreamOnPage(streamOnPage)
